@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= form.label :event %>
-    <%= form.text_field :event %>
+    <%= form.text_field :event_id, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :sub_event %>
-    <%= form.text_field :sub_event %>
+    <%= form.text_field :sub_event_id, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

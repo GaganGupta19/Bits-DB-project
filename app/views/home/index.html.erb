@@ -1,0 +1,34 @@
+<div class="col-md-4 col-sm-4">
+
+  <h1>Search Team</h1>
+
+  <br/>
+  <%= form_tag(enroll_home_index_path, method: :post) do %>
+    <div class="field">
+      <%= label_tag 'Competition' %>
+      <%= select_tag "event_sub_event_id", options_from_collection_for_select(@sub_events, "id", "sub_event_name"), class: "form-select chosen-select team-select", id: "team-select", prompt: "Select competition", multiple: true %>
+    </div>
+
+    <div class="field">
+      <%= label_tag 'Team' %>
+      <%= select_tag "team_id", options_from_collection_for_select(@teams, "id", "name"), class: "form-select chosen-select team-select", prompt: "Select Team" %>
+    </div>
+
+    <div class="field">
+      <%= hidden_field_tag "event_id", @event.id %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag "Enroll", class: "btn btn-primary"%>
+    </div>
+
+  <% end %>
+
+</div>
+
+<script>
+
+  $(document).ready(function() {
+    $('.team-select').select2();
+  });
+</script>

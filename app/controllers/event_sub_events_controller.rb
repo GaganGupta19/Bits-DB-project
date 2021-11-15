@@ -64,6 +64,6 @@ class EventSubEventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_sub_event_params
-      params.require(:event_sub_event).permit(:event, :sub_event)
+      params.require(:event_sub_event).permit(:event_id, :sub_event_id)
     end
 end

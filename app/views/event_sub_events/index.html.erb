@@ -2,7 +2,7 @@
 
 <h1>Event Sub Events</h1>
 
-<table>
+<table class="table table-stripped">
   <thead>
     <tr>
       <th>Event</th>
@@ -14,8 +14,8 @@
   <tbody>
     <% @event_sub_events.each do |event_sub_event| %>
       <tr>
-        <td><%= event_sub_event.event %></td>
-        <td><%= event_sub_event.sub_event %></td>
+        <td><%= link_to "#{event_sub_event.event.try(:name)}", event_path(event_sub_event.event.id) %></td>
+        <td><%= event_sub_event.sub_event.try(:name) %></td>
         <td><%= link_to 'Show', event_sub_event %></td>
         <td><%= link_to 'Edit', edit_event_sub_event_path(event_sub_event) %></td>
         <td><%= link_to 'Destroy', event_sub_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_15_152806) do
+ActiveRecord::Schema.define(version: 2021_11_15_224610) do
 
   create_table "event_sub_events", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "event_id"
@@ -58,15 +58,16 @@ ActiveRecord::Schema.define(version: 2021_11_15_152806) do
   end
 
   create_table "team_participations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "Team_id"
-    t.bigint "EventSubEvent_id"
+    t.bigint "team_id"
+    t.bigint "event_sub_event_id"
     t.integer "round"
     t.float "score"
     t.string "position"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["EventSubEvent_id"], name: "index_team_participations_on_EventSubEvent_id"
-    t.index ["Team_id"], name: "index_team_participations_on_Team_id"
+    t.integer "year"
+    t.index ["event_sub_event_id"], name: "index_team_participations_on_event_sub_event_id"
+    t.index ["team_id"], name: "index_team_participations_on_team_id"
   end
 
   create_table "teams", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
