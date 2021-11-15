@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Team Participations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Team</th>
+      <th>Eventsubevent</th>
+      <th>Round</th>
+      <th>Score</th>
+      <th>Position</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @team_participations.each do |team_participation| %>
+      <tr>
+        <td><%= team_participation.Team %></td>
+        <td><%= team_participation.EventSubEvent %></td>
+        <td><%= team_participation.round %></td>
+        <td><%= team_participation.score %></td>
+        <td><%= team_participation.position %></td>
+        <td><%= link_to 'Show', team_participation %></td>
+        <td><%= link_to 'Edit', edit_team_participation_path(team_participation) %></td>
+        <td><%= link_to 'Destroy', team_participation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Team Participation', new_team_participation_path %>

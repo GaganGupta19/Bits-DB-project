@@ -1,0 +1,42 @@
+<%= form_with(model: team_participation) do |form| %>
+  <% if team_participation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(team_participation.errors.count, "error") %> prohibited this team_participation from being saved:</h2>
+
+      <ul>
+        <% team_participation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Team %>
+    <%= form.text_field :Team %>
+  </div>
+
+  <div class="field">
+    <%= form.label :EventSubEvent %>
+    <%= form.text_field :EventSubEvent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :round %>
+    <%= form.number_field :round %>
+  </div>
+
+  <div class="field">
+    <%= form.label :score %>
+    <%= form.text_field :score %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.text_field :position %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

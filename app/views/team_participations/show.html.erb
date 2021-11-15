@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @team_participation.Team %>
+</p>
+
+<p>
+  <strong>Eventsubevent:</strong>
+  <%= @team_participation.EventSubEvent %>
+</p>
+
+<p>
+  <strong>Round:</strong>
+  <%= @team_participation.round %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @team_participation.score %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @team_participation.position %>
+</p>
+
+<%= link_to 'Edit', edit_team_participation_path(@team_participation) %> |
+<%= link_to 'Back', team_participations_path %>
