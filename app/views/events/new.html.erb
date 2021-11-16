@@ -1,7 +1,14 @@
-<div class="col-md-4 col-sm-4">
-  <h1>New Event</h1>
+<div class="col-md-offset-4 col-md-5 col-sm-4">
+  <div class="card">
+    <div class="card-body">
 
-  <%= render 'form', event: @event %>
+      <h1>New Event</h1>
 
-  <%= link_to 'Back', events_path %>
+      <%= render 'form', event: @event %>
+
+      <%= link_to 'Back', events_path %>
+
+    </div>
+  </div>
+
 </div>

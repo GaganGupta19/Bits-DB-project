@@ -13,8 +13,11 @@
 
   <tbody>
     <% @event_sub_events.each do |event_sub_event| %>
+      <% if event_sub_event.event.nil? %>
+          <% next %>
+      <% end %>
       <tr>
-        <td><%= link_to "#{event_sub_event.event.try(:name)}", event_path(event_sub_event.event.id) %></td>
+        <td><%= link_to "#{event_sub_event.event.try(:name)}", event_path(event_sub_event.event_id) %></td>
         <td><%= event_sub_event.sub_event.try(:name) %></td>
         <td><%= link_to 'Show', event_sub_event %></td>
         <td><%= link_to 'Edit', edit_event_sub_event_path(event_sub_event) %></td>

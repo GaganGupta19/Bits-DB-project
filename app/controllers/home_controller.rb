@@ -18,8 +18,7 @@ class HomeController < ApplicationController
   def search
     if params[:tname] && params[:year]
       @data = TeamParticipation
-        .joins(:team)
-        .includes(:team, event_sub_event: [:event])
+        .joins(:team, event_sub_event: [:event])
         .where("`teams`.`name` like '%#{params[:tname]}%' AND `team_participations`.`year` =  #{params[:year]}")
     end
   end
